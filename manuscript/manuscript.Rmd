@@ -75,9 +75,9 @@ Cronbach's $\alpha$ for these scales ranged from .83-.95.
 The results below were estimated on the original data, which are privacy sensitive.
 We use the *Workflow for Open Reproducible Code in Science*, implemented in the
 `worcs` R-package [@vanlissaWORCSWorkflowOpen2020],
-to provide an example that can be reproduced
-using an automatically generated synthetic dataset. 
+to provide fully reproducible code with an automatically generated synthetic dataset. 
 This synthetic dataset will yield different results from the original data.
+All code and the synthetic data are available at https://github.com/cjvanlissa/IHBT-SEM.
 
 ## Model
 
@@ -180,7 +180,7 @@ We can evaluate these hypotheses by calling the `bain()` function on the
 The results of this call are displayed in Table \@ref(tab:res).
 
 ```{r res, echo = FALSE, eval = TRUE, message=FALSE, warning=FALSE, results = "asis"}
-apa_table(res$fit[, c("Fit", "Com", "BF.u", "BF.c", "PMPa", "PMPb")], format.args = list(na_string = ""))
+apa_table(res$fit[, c("Fit", "Com", "BF.u", "BF.c", "PMPa", "PMPb")], format.args = list(na_string = ""), caption = "Main output of the call to bain")
 ```
 ```{r, eval = FALSE, echo = TRUE, message=FALSE, warning=FALSE, results = "none"}
 # Evaluate informative hypotheses
@@ -235,7 +235,7 @@ This is a substantial error probability.
 
 ## Discussion
 
-We observe that no hypothesis is strongly preferred over the unconstrained hypothesis, and that only $H_3$ is strongly preferred over its complement (indeed, the estimate $\beta_{mg} = .18$, whereas $\beta_{mb} = .01$). If we select $H_4$, our complex informative hypothesis, the $PMP_b = `r report(res$fit$PMPb[4], equals = F)`$, so the Bayesian error probability is $1-PMP_{b} = `r report(1-res$fit$PMPb[4], equals = F)`$ - about 70% probability that we have selected the wrong model. In other words - support for the original hypotheses is relatively inconclusive.
+We observe that no hypothesis is strongly preferred over the unconstrained hypothesis, and that only $H_3$ is strongly preferred over its complement (indeed, the estimate $\beta_{mg} = .18$, whereas $\beta_{mb} = .01$). If we select $H_4$, our complex informative hypothesis, the $PMP_b = `r report(res$fit$PMPb[4], equals = F)`$, so the Bayesian error probability is $1-PMP_{b} = `r report(1-res$fit$PMPb[4], equals = F)`$ - about 70% probability that we have selected the wrong model. In other words - support for the original hypotheses is relatively inconclusive. The only finding convincingly supported is that maternal support predicts girls', but not boys', emotion regulation.
 
 ## Key References and Software
 
