@@ -1,0 +1,54 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:t1}Model parameters used to evaluate the informative hypotheses}
+
+\begin{tabular}{lllll}
+\toprule
+ & \multicolumn{1}{c}{Parameter} & \multicolumn{1}{c}{Label} & \multicolumn{1}{c}{Estimate} & \multicolumn{1}{c}{95\% CI}\\
+\midrule
+127 & Mother on girl & mg & 0.24* & [0.04, 0.44]\\
+130 & Father on girl & fg & -0.10 & [-0.29, 0.08]\\
+283 & Mother on boy & mb & 0.01 & [-0.13, 0.15]\\
+286 & Father on boy & fb & 0.03 & [-0.11, 0.17]\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} *: p < .05}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:res}}
+
+\begin{tabular}{lllllll}
+\toprule
+ & \multicolumn{1}{c}{Fit} & \multicolumn{1}{c}{Com} & \multicolumn{1}{c}{BF.u} & \multicolumn{1}{c}{BF.c} & \multicolumn{1}{c}{PMPa} & \multicolumn{1}{c}{PMPb}\\
+\midrule
+H1 & 0.04 & 0.04 & 1.13 & 1.14 & 0.13 & 0.12\\
+H2 & 0.41 & 0.19 & 2.13 & 2.91 & 0.25 & 0.22\\
+H3 & 0.97 & 0.50 & 1.93 & 28.61 & 0.22 & 0.20\\
+H4 & 0.01 & 0.00 & 3.44 & 3.47 & 0.40 & 0.36\\
+Hu &  &  &  &  &  & 0.10\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}
