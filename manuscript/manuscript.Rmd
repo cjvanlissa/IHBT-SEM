@@ -121,6 +121,10 @@ source("model_syntax.R")
 load_data()
 
 # Run the SEM-analysis
+# Note that, use of missing = "fiml" is only valid if
+# hypotheses in bain are formulated using ">" and "<",
+# and not (additionally) using "=".
+# See the bain vignette for more information.
 model <- sem(syntax, data = df, missing = "fiml", group = "sex")
 
 # Inspect model fit
@@ -207,25 +211,20 @@ Using the `bain` R-package [@gu2019bain], we can directly evaluate the informati
 This is more suitable than the indirect approach used in the original paper.
 First, we evaluate Bayes factors for each informative hypothesis $H_i$,
 which reflect support in the data in favor of $H_i$,
-relative to the unconstrained alternative hypothesis, which places no (in)equality constraints on the parameters.
-Table \@ref(tab:res) indicates that all of these Bayes factors, BF$_{.u}$ are quite small,
-with the largest being $`r report(res$fit$BF.u[4], equals = F)`$ - thus indicating that none of the hypotheses is strongly preferred over the unconstrained hypothesis.
-Second, we evaluate Bayes factors for each informative hypothesis $H_i$
 relative to the complement of that hypothesis, which states that any other ordering of parameters is true, $H_c: !H_i$.
-For $H_1$, the Bayes factor was BF$_1 `r report(res$fit$BF.c[1])`$, indicating no evidence for or against the hypothesis that parents' support positively predicts emotion regulation.
+Table \@ref(tab:res) indicates that, for $H_1$, the Bayes factor was BF$_1 `r report(res$fit$BF.c[1])`$, indicating no evidence for or against the hypothesis that parents' support positively predicts emotion regulation.
 BF$_2 `r report(res$fit$BF.c[2])`$ indicated limited evidence in favor of $H_2$ over its complement.
 Thus, the data provided approximately three times more evidence for the hypothesis that maternal support predicts emotion regulation more strongly than paternal support,
 than for any ordering of parameters.
 BF$_3 `r report(res$fit$BF.c[3])`$ indicated substantial evidence in favor of $H_3$ over its complement.
 Thus, the effect of maternal support on emotion regulation is very likely stronger for girls than boys.
-Finally, overall, there was limited evidence in favor of the combination of these three hypotheses, relative to their complement, BF$_4 `r report(res$fit$BF.c[4])`$.
+Overall, there was limited evidence in favor of the combination of these three hypotheses, relative to their complement, BF$_4 `r report(res$fit$BF.c[4])`$.
 Thus, evidence in favor of all three hypotheses was about three times as large as evidence against them.
 
 Finally, we can compare posterior model probabilities, which indicate the degree of preference for all four hypotheses in the set,
-and for an unconstrained hypothesis, $H_u$, which will be preferred if none of the informative hypotheses are supported by the data.
-It should be noted that in this particular example,
-comparing posterior model probabilities is not very meaningful,
-because the first three hypotheses are constitu
+and for an unconstrained hypothesis, $H_u$.
+This unconstrained hypothesis places no restrictions on the model parameters,
+and will thus be preferred if none of the constraints imposed by the informative hypotheses are well-supported by the data.
 Based on posterior model probabilities, support was strongest for $H_4$, $p_4 = .34$,
 followed by $H_2$, $p_2 = .24$, $H_3$, $p_3 = .20$, $H_1$, $p_1 = .12$,
 and finally $H_u$, $p_u < .11$.

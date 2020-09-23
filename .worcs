@@ -3,7 +3,7 @@ creator: Lissa102
 entry_point: manuscript/manuscript.Rmd
 checksums:
   df.csv: d3bf7c5b80de7ed7242e3b7789e8da58
-  synthetic_df.csv: c11d806cf93e87950c701a462fa2f9b6
+  synthetic_df.csv: fc72fa0ff3f8a23bc55d29710b765b9b
 data:
   df.csv:
     synthetic: synthetic_df.csv
