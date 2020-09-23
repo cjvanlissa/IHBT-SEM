@@ -2,8 +2,8 @@ worcs_version: 0.1.4.3
 creator: Lissa102
 entry_point: manuscript/manuscript.Rmd
 checksums:
-  df.csv: 831297ced55dedd540a280d052482032
-  synthetic_df.csv: 632e11343ca97e05b45c7e8e0668410b
+  df.csv: d3bf7c5b80de7ed7242e3b7789e8da58
+  synthetic_df.csv: c11d806cf93e87950c701a462fa2f9b6
 data:
   df.csv:
     synthetic: synthetic_df.csv
